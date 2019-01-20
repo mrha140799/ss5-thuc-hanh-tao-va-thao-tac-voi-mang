@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CodeGym</title>
+</head>
+<style>
+    #txtValue {
+        width: 350px;
+        height: 25px;
+    }
+
+</style>
+<body>
+
+    <input type="text" id="txtValue">
+    <input type="button" value="ADD" onclick="Add();">
+    <input type="button" value="Display" onclick="Display();">
+    <h1 id="idShow"></h1>
+<script>
+    var element = [];
+    var idShow = document.getElementById("idShow");
+    var htmlValue = '';
+    var x = 0;
+
+    function Add() {
+        var txtValue = document.getElementById("txtValue").value;
+        element[x] = txtValue;
+        x++;
+    }
+    function Display() {
+        for (let i = 0 ; i<element.length ; i++) {
+            htmlValue += "Element " + i + " = " + element[i] + "<br>";
+        }
+        idShow.innerHTML = htmlValue;
+        htmlValue = "";
+    }
+</script>
+</body>
+</html>
